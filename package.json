@@ -25,7 +25,7 @@
   "scripts": {
     "build": "yarn run clean-dist && webpack --config=configs/webpack/prod.js",
     "clean-dist": "rimraf dist/*",
-    "lint": "eslint './src/**/*.{js,ts,tsx}' --quiet",
+    "lint": "eslint . --fix",
     "start": "yarn run start-dev",
     "start-dev": "webpack serve --config=configs/webpack/dev.js",
     "start-prod": "yarn run build && node express.js",
@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "^4.28.2",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.6",
-    "eslint": "^7.30.0",
+    "eslint": "^7.31.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.24.0",
@@ -68,5 +68,14 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/data-grid": "^4.0.0-alpha.34",
+    "@material-ui/icons": "^4.11.2",
+    "@reduxjs/toolkit": "^1.6.1",
+    "eslint-config-next": "^11.0.1",
+    "react-material-ui-form-validator": "^2.1.4",
+    "react-redux": "^7.2.4",
+    "uuid": "^8.3.2"
+  }
 }

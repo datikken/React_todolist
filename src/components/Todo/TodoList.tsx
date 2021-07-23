@@ -1,11 +1,16 @@
 import * as React from "react";
 import { DataGrid, GridColumns, GridCellParams } from "@material-ui/data-grid";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../store/store";
-import { editTodo, removeTodo, setTodoStatus } from "../store/todos/todosSlice";
+import { AppDispatch, RootState } from "../../store/store";
+import {
+  editTodo,
+  removeTodo,
+  setTodoStatus,
+} from "../../store/todos/todosSlice";
 import Checkbox from "@material-ui/core/Checkbox";
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
+import TodoListEmpty from "./TodoListEmpty";
 
 function TodoList(): JSX.Element {
   const todoList = useSelector((state: RootState) => state);
@@ -52,7 +57,6 @@ function TodoList(): JSX.Element {
       headerName: "Remove",
       sortable: false,
       width: 140,
-      disableClickEventBubbling: false,
       // eslint-disable-next-line react/display-name
       renderCell: (params: GridCellParams) => {
         return (
@@ -63,7 +67,7 @@ function TodoList(): JSX.Element {
               dispatch(removeTodo(params.row.id));
             }}
           >
-            <DeleteIcon index={params.row.id} />
+            <DeleteIcon />
           </IconButton>
         );
       },
@@ -75,8 +79,10 @@ function TodoList(): JSX.Element {
       <DataGrid
         rows={todoList}
         columns={columns}
-        hideFooter={true}
         onEditCellChange={(data) => handleCellValueChange(data)}
+        components={{
+          NoRowsOverlay: TodoListEmpty,
+        }}
       />
     </div>
   );

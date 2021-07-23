@@ -1,7 +1,7 @@
 import * as React from "react";
 import Container from "@material-ui/core/Container";
-import TodoList from "./TodoList";
-import TodoForm from "./TodoForm";
+import TodoList from "./Todo/TodoList";
+import TodoForm from "./Todo/TodoForm";
 
 function App(): JSX.Element {
   return (

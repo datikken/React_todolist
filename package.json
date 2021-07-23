@@ -1,7 +1,7 @@
 {
-  "name": "react-webpack-typescript-starter",
+  "name": "react-webpack-typescript-todolist",
   "version": "0.1.0",
-  "description": "Starter kit for React, Webpack (with Hot Module Replacement), Typescript and Babel.",
+  "description": "-",
   "keywords": [
     "react",
     "webpack",
@@ -12,16 +12,16 @@
     "starter",
     "boilerplate"
   ],
-  "author": "Viktor Persson",
+  "author": "datikken",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vikpe/react-webpack-typescript-starter.git"
+    "url": "https://github.com/datikken/React_todolist.git"
   },
   "bugs": {
-    "url": "https://github.com/vikpe/react-webpack-typescript-starter/issues"
+    "url": "https://github.com/datikken/React_todolist.git/issues"
   },
-  "homepage": "https://github.com/vikpe/react-webpack-typescript-starter",
+  "homepage": "https://github.com/datikken/React_todolist.git",
   "scripts": {
     "build": "yarn run clean-dist && webpack --config=configs/webpack/prod.js",
     "clean-dist": "rimraf dist/*",
